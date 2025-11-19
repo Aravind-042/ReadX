@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ReadX - AI Reading Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['Georgia', 'serif'],
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              'readx-dark': '#121212',
+              'readx-dark-secondary': '#1E1E1E',
+              'readx-light': '#F5F5F5',
+              'readx-light-secondary': '#FFFFFF',
+              'readx-accent': '#3B82F6',
+              'readx-text-dark': '#E0E0E0',
+              'readx-text-light': '#1F2937',
+              'sepia': '#FBF0D9',
+              'sepia-text': '#5B4636',
+            }
+          }
+        },
+        plugins: [
+          function({ addUtilities }) {
+            addUtilities({
+              '.perspective-1000': {
+                'perspective': '1000px',
+              },
+              '.transform-style-3d': {
+                'transform-style': 'preserve-3d',
+              },
+              '.backface-hidden': {
+                'backface-visibility': 'hidden',
+              },
+              '.rotate-y-180': {
+                'transform': 'rotateY(180deg)',
+              },
+            })
+          }
+        ]
+      }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+    <script>pdfjsLib.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js`;</script>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.29.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+  }
+}
+</script>
+</head>
+  <body class="bg-readx-dark text-readx-text-dark">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
